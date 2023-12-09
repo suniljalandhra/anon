@@ -12,7 +12,6 @@ export const Header: FunctionComponent = () => {
   return (
     <header className="">
       <div className="flex flex-row gap-3 items-center justify-end m-5">
-        <VoteResults />
         {process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ? (
           <a
             href={`https://sepolia.scrollscan.com/address/0x${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`}
@@ -22,20 +21,6 @@ export const Header: FunctionComponent = () => {
             {shortenAddress("0x" + process.env.NEXT_PUBLIC_CONTRACT_ADDRESS)}
           </a>
         ) : null}
-        <div className="">
-          <a target={"_blank"} rel={"noreferrer"} href="https://pse.dev/">
-            <Image alt="pse" src={imgPSE} width={25} height={25}></Image>
-          </a>
-        </div>
-        <div className="">
-          <a
-            target={"_blank"}
-            rel={"noreferrer"}
-            href="https://github.com/privacy-scaling-explorations/anon-aadhaar"
-          >
-            <Image alt="github" src={imgGithub} width={25} height={25}></Image>
-          </a>
-        </div>
       </div>
     </header>
   );

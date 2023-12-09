@@ -7,9 +7,12 @@ import { useRouter } from "next/router";
 import { UserStatus } from "@/interface";
 import { TestFiles } from "@/components/TestFiles";
 
+
 type HomeProps = {
   setUserStatus: Dispatch<SetStateAction<UserStatus>>;
 };
+
+
 
 export default function Home({ setUserStatus }: HomeProps) {
   // Use the Country Identity hook to get the status of the user.
@@ -26,8 +29,8 @@ export default function Home({ setUserStatus }: HomeProps) {
   return (
     <>
       <main className="flex flex-col min-h-[75vh] mx-auto rounded-2xl w-full sm:max-w-screen-sm p-4 sm:p-8 justify-between">
-        <h1 className="font-bold text-sm sm:text-2xl">
-          Anon Aadhaar Example - Login
+        <h1 className="font-bold text-sm sm:text-2xl flex justify-center">
+          Anon Aadhaar
         </h1>
         <div className="text-sm sm:text-lg">
           Initially, you'll need to log in using your Aadhaar card. During the
