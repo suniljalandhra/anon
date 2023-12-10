@@ -15,7 +15,7 @@ import { Web3Modal } from "@web3modal/react";
 import { Footer } from "@/components/Footer";
 import { UserStatus } from "@/interface";
 
-const chains = [polygonZkEvmTestnet];
+const chains = [scrollSepolia];
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID || "";
 const appId = process.env.NEXT_PUBLIC_APP_ID || "";
 

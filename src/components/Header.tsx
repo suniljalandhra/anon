@@ -12,7 +12,7 @@ export const Header: FunctionComponent = () => {
       <div className="flex flex-row gap-3 items-center justify-end m-5">
         {process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ? (
           <a
-            href={`https://testnet-zkevm.polygonscan.com/address/0x${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`}
+            href={`https://sepolia.scrollscan.com/address/0x${process.env.NEXT_PUBLIC_CONTRACT_ADDRESS}`}
             target={"_blank"}
             className="text-black font-light text-sm hover:underline "
           >
