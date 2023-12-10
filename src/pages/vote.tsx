@@ -103,7 +103,7 @@ export default function Vote({ setUserStatus }: VoteProps) {
                     <div className="font-bold flex justify-center">
                       You can check your transaction{" "}
                       <a
-                        href={`https://sepolia.scrollscan.com/tx//${data?.hash}`}
+                        href={`https://testnet-zkevm.polygonscan.com/tx//${data?.hash}`}
                         target="_blank"
                         className="text-blue-500"
                       >

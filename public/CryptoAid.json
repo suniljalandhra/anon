@@ -22,6 +22,42 @@
             "type": "error"
         },
         {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "targetAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "description",
+                    "type": "string"
+                }
+            ],
+            "name": "createFund",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "fundId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "donate",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
             "inputs": [],
             "name": "FundAlreadyCompleted",
             "type": "error"
@@ -101,8 +137,86 @@
             "type": "event"
         },
         {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "fundId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "releaseFund",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "fundId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "requester",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setFundRequest",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
             "stateMutability": "payable",
             "type": "fallback"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256[2]",
+                    "name": "_pA",
+                    "type": "uint256[2]"
+                },
+                {
+                    "internalType": "uint256[2][2]",
+                    "name": "_pB",
+                    "type": "uint256[2][2]"
+                },
+                {
+                    "internalType": "uint256[2]",
+                    "name": "_pC",
+                    "type": "uint256[2]"
+                },
+                {
+                    "internalType": "uint256[34]",
+                    "name": "_pubSignals",
+                    "type": "uint256[34]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "fundId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "verifyAndRequest",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "receive"
         },
         {
             "inputs": [],
@@ -179,29 +293,6 @@
             "type": "function"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "targetAmount",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "string",
-                    "name": "title",
-                    "type": "string"
-                },
-                {
-                    "internalType": "string",
-                    "name": "description",
-                    "type": "string"
-                }
-            ],
-            "name": "createFund",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [],
             "name": "data",
             "outputs": [
@@ -212,19 +303,6 @@
                 }
             ],
             "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "fundId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "donate",
-            "outputs": [],
-            "stateMutability": "payable",
             "type": "function"
         },
         {
@@ -460,42 +538,6 @@
             "type": "function"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "fundId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "releaseFund",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "fundId",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "address",
-                    "name": "requester",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "setFundRequest",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [],
             "name": "totalEtherReceived",
             "outputs": [
@@ -507,48 +549,6 @@
             ],
             "stateMutability": "view",
             "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256[2]",
-                    "name": "_pA",
-                    "type": "uint256[2]"
-                },
-                {
-                    "internalType": "uint256[2][2]",
-                    "name": "_pB",
-                    "type": "uint256[2][2]"
-                },
-                {
-                    "internalType": "uint256[2]",
-                    "name": "_pC",
-                    "type": "uint256[2]"
-                },
-                {
-                    "internalType": "uint256[34]",
-                    "name": "_pubSignals",
-                    "type": "uint256[34]"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "fundId",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "verifyAndRequest",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "stateMutability": "payable",
-            "type": "receive"
         }
     ]
 }
